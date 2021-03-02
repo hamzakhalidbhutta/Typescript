@@ -1,13 +1,34 @@
-// Used to override the existing types of the elements
-var userName = "Hamza";
-// will cause error
-// let countUser : number = <number>userName;
-// Forced Type Assertion
-var countUsers = userName;
-// Prints name successfully
-console.log(countUsers);
-function getProperty() {
-    return;
+// Type guards are used when we have declared a variable with custom type and we have to check the
+// Custom type guard that determines if a supplied object meets the requirementse
+// The standard type guards include
+// typeof
+// instanceof
+// We can write our own custom type guard.
+function typeGuardExample(stringNumber) {
+    // Error: Property does not exist on tyep 'number'
+    // const a = stringNumber.length;
+    // Error: Property does not exist on tyep 'string'
+    // const b = stringNumber.toFixed();
+    // Type guard
+    if (typeof stringNumber === "string") {
+        // OK
+        return stringNumber.length;
+    }
+    else {
+        // OK
+        return stringNumber.toFixed();
+    }
 }
-var property = getProperty();
-var bedRoomCount = property.bedRoom;
+console.log(typeGuardExample("23"));
+function isSpeedControllable(treadmill) {
+    if (treadmill.increaseSpeed && treadmill.decreseSpeed && treadmill.stop)
+        return true;
+    else
+        return false;
+}
+function fanSpeedControllerTypeGuard(treadmill) {
+    if (isSpeedControllable(treadmill)) {
+        return true;
+    }
+    return false;
+}
