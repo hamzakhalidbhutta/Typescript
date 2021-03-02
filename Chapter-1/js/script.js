@@ -1,5 +1,13 @@
-// Used for making optional, readonly or nullable types of the similar type
-var selectOption = {
-    name: "Yes! that was optional."
-};
-console.log("Was isSelected is optional?\n" + selectOption.name);
+// Used to override the existing types of the elements
+var userName = "Hamza";
+// will cause error
+// let countUser : number = <number>userName;
+// Forced Type Assertion
+var countUsers = userName;
+// Prints name successfully
+console.log(countUsers);
+function getProperty() {
+    return;
+}
+var property = getProperty();
+var bedRoomCount = property.bedRoom;
