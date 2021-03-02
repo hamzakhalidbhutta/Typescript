@@ -9,6 +9,24 @@
 //  Quintuple : 5 items
 //  Sextuple  : 6 items
 //  Septuple  : 7 items
-var poem;
-poem = ["Name of the poem", 2000, true];
-console.log(poem.length);
+
+let poem : [ string, number, boolean];
+
+
+// on accessing the type by index the type is known and will be checked by the compiler 
+// The values must be set in order of their types
+poem = ["Name of the poem", 2000, true]
+
+console.log(poem.length)
+
+
+
+
+// poem[0] = "The first argument is of type string";
+// poem[1] = 123;
+// poem[2] = true;
+
+// Can't set property 0 of undefined
+// console.log(poem)
+
+
