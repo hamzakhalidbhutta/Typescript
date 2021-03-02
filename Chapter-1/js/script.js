@@ -32,3 +32,16 @@ function fanSpeedControllerTypeGuard(treadmill) {
     }
     return false;
 }
+var treadmill;
+treadmill.increaseSpeed = function a() {
+    console.log("Fan Speed Increased");
+};
+treadmill.decreseSpeed = function d() {
+    console.log("Fan Speed Decreased");
+};
+treadmill.stop = function a() {
+    console.log("Fan Stopped");
+};
+if (fanSpeedControllerTypeGuard(treadmill)) {
+    console.log("Speed Controlled");
+}

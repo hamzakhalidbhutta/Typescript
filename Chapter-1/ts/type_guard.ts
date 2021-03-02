@@ -30,6 +30,8 @@ interface SpeedControllerable {
   stop(): void;
 }
 
+
+
 function isSpeedControllable(
   treadmill: SpeedControllerable | any
 ): treadmill is SpeedControllerable {
@@ -38,10 +40,25 @@ function isSpeedControllable(
   else return false;
 }
 
-
-function fanSpeedControllerTypeGuard(treadmill: SpeedControllerable): treadmill is SpeedControllerable {
-    if(isSpeedControllable(treadmill)){
-        return true
-    }
-    return false;
+function fanSpeedControllerTypeGuard(
+  treadmill: SpeedControllerable
+): treadmill is SpeedControllerable {
+  if (isSpeedControllable(treadmill)) {
+    return true;
+  }
+  return false;
 }
+
+let treadmill: SpeedControllerable;
+treadmill.increaseSpeed = function a () {
+    console.log("Fan Speed Increased");
+}
+treadmill.decreseSpeed = function d () {
+    console.log("Fan Speed Decreased");
+}
+treadmill.stop = function a () {
+    console.log("Fan Stopped");
+}
+if (fanSpeedControllerTypeGuard(treadmill)) {
+console.log("Speed Controlled")
+} 
