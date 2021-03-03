@@ -20,7 +20,7 @@ interface Cube {
 }
 
 interface Cuboid {
-  kind: "Cuboid";
+  kind: "cuboid";
   height: number;
   width: number;
   depth: number;
@@ -29,14 +29,19 @@ interface Cuboid {
 // Union
 type Prism = Cube | Cuboid;
 
-
+let iPrism : Prism = {
+  height:20,
+  width:10,
+  depth:20,
+  kind:"cuboid"
+}
 
 function volume(prism: Prism): number {
   // Type Guard
   switch (prism.kind) {
     case "cube":
       return prism.size * prism.size * prism.size;
-    case "Cuboid":
+    case "cuboid":
       return prism.width * prism.depth * prism.height;
     default:
       assertNever(prism);
@@ -46,5 +51,5 @@ function volume(prism: Prism): number {
 function assertNever(arg: never): never {
   throw new Error("Possible new tagged type: " + arg);
 }
-let prismCal: Prism;
-volume(prismCal);
+
+console.log(volume(iPrism))

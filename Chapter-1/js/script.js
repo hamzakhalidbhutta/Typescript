@@ -1,47 +1,32 @@
-// Type guards are used when we have declared a variable with custom type and we have to check the
-// Custom type guard that determines if a supplied object meets the requirementse
-// The standard type guards include
-// typeof
-// instanceof
-// We can write our own custom type guard.
-function typeGuardExample(stringNumber) {
-    // Error: Property does not exist on tyep 'number'
-    // const a = stringNumber.length;
-    // Error: Property does not exist on tyep 'string'
-    // const b = stringNumber.toFixed();
-    // Type guard
-    if (typeof stringNumber === "string") {
-        // OK
-        return stringNumber.length;
-    }
-    else {
-        // OK
-        return stringNumber.toFixed();
-    }
-}
-console.log(typeGuardExample("23"));
-function isSpeedControllable(treadmill) {
-    if (treadmill.increaseSpeed && treadmill.decreseSpeed && treadmill.stop)
-        return true;
-    else
-        return false;
-}
-function fanSpeedControllerTypeGuard(treadmill) {
-    if (isSpeedControllable(treadmill)) {
-        return true;
-    }
-    return false;
-}
-var treadmill;
-treadmill.increaseSpeed = function a() {
-    console.log("Fan Speed Increased");
+// A discriminated union, or tagged union,
+// allows to combine union
+//     types
+//     type aliases
+//     type guards
+// to get full autocompletion and checking for types with a common string literal property
+// The components that make up a discriminated union are the following:
+//         1. Several types that share a common string literal property, called a discriminant.
+//         2. A type alias for a union of these types, called a union.
+//         3. A type guard that checks the discriminant.
+var iPrism = {
+    height: 20,
+    width: 10,
+    depth: 20,
+    kind: "cuboid"
 };
-treadmill.decreseSpeed = function d() {
-    console.log("Fan Speed Decreased");
-};
-treadmill.stop = function a() {
-    console.log("Fan Stopped");
-};
-if (fanSpeedControllerTypeGuard(treadmill)) {
-    console.log("Speed Controlled");
+function volume(prism) {
+    // Type Guard
+    switch (prism.kind) {
+        case "cube":
+            return prism.size * prism.size * prism.size;
+        case "cuboid":
+            return prism.width * prism.depth * prism.height;
+        default:
+            assertNever(prism);
+            break;
+    }
 }
+function assertNever(arg) {
+    throw new Error("Possible new tagged type: " + arg);
+}
+console.log(volume(iPrism));
