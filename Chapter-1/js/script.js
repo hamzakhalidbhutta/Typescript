@@ -19,7 +19,7 @@
         • In any other case, the operator is not allowed
 */
 // 6:number
-var num = 5 + 1;
+var num = 5 + 2;
 console.log(num);
 // '51': string
 var str = 5 + '1';

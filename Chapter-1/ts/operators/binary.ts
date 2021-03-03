@@ -19,10 +19,11 @@
         • In any other case, the operator is not allowed
 */
 // 6:number
-const num = 5 + 1;
+const num = 5 + 2;
 console.log(num)
 
 // '51': string
 const str = 5 + '1';
 console.log(str)
+
 
