@@ -3,6 +3,11 @@
 // Manual method of making a readonly, optional and nullable types
 // The Lengthy Method
 
+
+// For example you have an array of users. Some are admin & others are not. You want to call an admin only method on the admin users, and some other method on all other users.
+
+// Its specifically so that you get type safety in situations in which the objects do not have the same fields. It allows TS to narrow the types within your duck typing control flow logic.
+
 interface readOnlyOptions {
   readonly name: string;
   readonly isSelected: boolean;
