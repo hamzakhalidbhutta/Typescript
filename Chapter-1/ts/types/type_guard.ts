@@ -1,9 +1,13 @@
-// Type guards are used when we have declared a variable with custom type and we have to check the
-// Custom type guard that determines if a supplied object meets the requirementse
-// The standard type guards include
-// typeof
-// instanceof
-// We can write our own custom type guard.
+/* 
+  
+  * Type guards are used when we have declared a variable with custom type and we have to check the
+  * Custom type guard that determines if a supplied object meets the requirementse
+  * The standard type guards include
+      typeof
+      instanceof
+  * We can write our own custom type guard.
+
+*/
 
 function typeGuardExample(stringNumber: string | number) {
   // Error: Property does not exist on tyep 'number'
@@ -19,18 +23,14 @@ function typeGuardExample(stringNumber: string | number) {
     return stringNumber.toFixed();
   }
 }
-
 console.log(typeGuardExample("23"));
 
 // Custom Guard
-
 interface SpeedControllerable {
   increaseSpeed(): void;
   decreseSpeed(): void;
   stop(): void;
 }
-
-
 
 function isSpeedControllable(
   treadmill: SpeedControllerable | any
@@ -61,4 +61,4 @@ treadmill.stop = function a () {
 }
 if (fanSpeedControllerTypeGuard(treadmill)) {
 console.log("Speed Controlled")
-} 
+}

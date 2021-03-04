@@ -1,5 +1,7 @@
-// Increment (++) and Decrement (--) are only applied on:
-// type any, enum and number only
+/* 
+    •   Increment (++) and Decrement (--) are only applied on:
+    •   type any, enum and number only
+*/
 
 // let counter = 0;
 // do {

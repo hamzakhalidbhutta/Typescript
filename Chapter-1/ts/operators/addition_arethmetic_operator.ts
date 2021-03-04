@@ -1,9 +1,8 @@
 /* 
   *   In TypeScript, binary operators are used with two variables of 
-         • type number 
-         • any, when using with the any type, ensure it contains a number. 
-  *   Result of an operation is always a number.
-  *   Binary operators: - * / % << >> >>> & ^ |
+        • type number 
+        • any, when using with the any type, ensure it contains a number. 
+  *   Result of an operation is always a number
   *   The plus (+) operator is a special case: 
         • mathematical addition
         • concatenation operator. 
@@ -18,6 +17,7 @@
         • If the type of either of the arguments is any, and the other argument is not a string, the result is any.
         • In any other case, the operator is not allowed
 */
+
 // 6:number
 const num = 5 + 2;
 console.log(num)
