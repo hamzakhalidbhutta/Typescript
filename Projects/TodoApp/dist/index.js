@@ -1,0 +1,13 @@
+"use strict";
+// import { TodoItem } from "./todoItem";
+Object.defineProperty(exports, "__esModule", { value: true });
+// console.clear();
+// let item1: TodoItem = new TodoItem(1, "Electricity Bill", false);
+// let item2: TodoItem = new TodoItem(2,"Purchase Mangoes",true);
+// item1.printDetails();
+// item2.printDetails();
+const itemCollection_1 = require("./itemCollection");
+console.clear();
+let itemCol = new itemCollection_1.ItemCollection();
+itemCol.addTodo("Eat Biryani");
+itemCol.printDetails();
