@@ -20,5 +20,8 @@ class ItemCollection {
             item.printDetails();
         });
     }
+    taskDone(taskDone) {
+        let task = this.items.find((item) => { (item.id === taskDone) ? item.complete = true : null; });
+    }
 }
 exports.ItemCollection = ItemCollection;

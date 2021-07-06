@@ -18,3 +18,6 @@ let itemCol: ItemCollection = new ItemCollection();
 itemCol.addTodo("Eat Biryani");
 
 itemCol.printDetails();
+
+itemCol.taskDone(1);
+itemCol.printDetails();

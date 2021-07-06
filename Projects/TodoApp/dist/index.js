@@ -11,3 +11,5 @@ console.clear();
 let itemCol = new itemCollection_1.ItemCollection();
 itemCol.addTodo("Eat Biryani");
 itemCol.printDetails();
+itemCol.taskDone(1);
+itemCol.printDetails();
